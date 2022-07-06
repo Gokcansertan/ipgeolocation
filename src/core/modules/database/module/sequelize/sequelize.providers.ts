@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { sequelizeConf } from './sequelize.conf';
-import { ipgeolocationEntity } from '../../../../../application/modules/ipgeolocation/models/entity/ipgeolocation.entity';
+import { IpgeolocationEntity } from '../../../../../application/modules/ipgeolocation/models/entity/ipgeolocation.entity';
 
 export const sequelizeProviders = [
   {
@@ -10,7 +10,7 @@ export const sequelizeProviders = [
         dialect: 'postgres',
         ...sequelizeConf,
       });
-      sequelize.addModels([ipgeolocationEntity]);
+      sequelize.addModels([IpgeolocationEntity]);
       await sequelize.sync();
       return sequelize;
     },

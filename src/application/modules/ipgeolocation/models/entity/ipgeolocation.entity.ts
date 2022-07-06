@@ -8,7 +8,7 @@ import {
 } from 'sequelize-typescript';
 
 @Table
-export class ipgeolocationEntity extends Model {
+export class IpgeolocationEntity extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)
@@ -79,4 +79,10 @@ export class ipgeolocationEntity extends Model {
 
   @Column(DataType.STRING)
   organization: string;
+
+  @Column(DataType.JSON)
+  currency: object;
+
+  @Column(DataType.JSON)
+  time_zone: object;
 }
