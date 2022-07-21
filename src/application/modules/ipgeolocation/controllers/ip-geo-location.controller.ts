@@ -1,13 +1,21 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from "@nestjs/common";
-import { IpgeolocationService } from '../services/ipgeolocation.service';
-import { IpgeolocationDto } from '../models/dto/ipgeolocation.dto';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  Query,
+} from '@nestjs/common';
+import { IpGeoLocationService } from '../services/ip-geo-location.service';
 
 @Controller('ipgeolocation')
-export class IpgeolocationController {
-  constructor(private readonly IpService: IpgeolocationService) {}
+export class IpGeoLocationController {
+  constructor(private readonly IpService: IpGeoLocationService) {}
 
   @Post()
-  create(@Body('ipAddress') ipAddress: IpgeolocationDto) {
+  create(@Body('ipAddress') ipAddress: string) {
     return this.IpService.saveIP(ipAddress);
   }
 
@@ -22,7 +30,7 @@ export class IpgeolocationController {
   }
   //
   @Put(':ipAddress')
-  update(@Param('ipAddress') ipAddress) {
+  update(@Param('ipAddress') ipAddress: string) {
     return this.IpService.ipUpdate(ipAddress);
   }
   //

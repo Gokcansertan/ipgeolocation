@@ -1,10 +1,10 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { ipgeolocationConf } from '../models/conf/ipgeolocationConf';
-import { IpGeoLocation } from '../../../../core/utils/ip-geo-location';
-import { IpgeolocationEntity } from '../models/entity/ipgeolocation.entity';
+import { IpGeoLocation } from '../../../../core/helpers/ip-geo-location';
+import { IpGeoLocationEntity } from '../models/entity/ip-geo-location.entity';
+import { ipGeoLocationConf } from '../models/conf/ip-geo-location-conf';
 
 @Injectable()
-export class IpgeolocationService extends IpGeoLocation {
+export class IpGeoLocationService extends IpGeoLocation {
   //TODO: modify core file transfer
 
   async saveIP(ipAddress) {
@@ -18,7 +18,7 @@ export class IpgeolocationService extends IpGeoLocation {
   }
 
   async ipList() {
-    const ipAllList = await IpgeolocationEntity.findAll();
+    const ipAllList = await IpGeoLocationEntity.findAll();
     return ipAllList;
   }
 

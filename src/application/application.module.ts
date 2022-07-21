@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { IpgeolocationModule } from './modules/ipgeolocation/ipgeolocation.module';
+import { IpGeoLocationModule } from './modules/ipgeolocation/ip-geo-location.module';
 @Module({
-  imports: [IpgeolocationModule],
+  imports: [IpGeoLocationModule],
   controllers: [],
   providers: [],
 })

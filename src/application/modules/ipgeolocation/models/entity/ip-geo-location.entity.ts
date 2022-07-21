@@ -8,7 +8,7 @@ import {
 } from 'sequelize-typescript';
 
 @Table
-export class IpgeolocationEntity extends Model {
+export class IpGeoLocationEntity extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)
@@ -26,8 +26,8 @@ export class IpgeolocationEntity extends Model {
   @Column(DataType.STRING)
   country_code2: string;
 
-  @Column(DataType.BOOLEAN)
-  country_code3: boolean;
+  @Column(DataType.STRING)
+  country_code3: string;
 
   @Column(DataType.STRING)
   country_name: string;
